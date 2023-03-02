@@ -2,7 +2,7 @@
 - name: Pull docker image of Calculator
   hosts: all
   tasks:
-    - name: Start docker service
+    - name: sudo Start docker service
       service:
         name: docker
         state: started
