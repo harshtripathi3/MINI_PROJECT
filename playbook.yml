@@ -8,7 +8,7 @@
         state: started
 
     - name: pull docker image
-      shell: docker pull inspiringrai/calcproj
+      shell: docker pull tripathiharsh9/devops_pro
 
     - name: running container
-      shell: docker run -it -d inspiringrai/calcproj /bin/bash
+      shell: docker run -it -d tripathiharsh9/devops_pro /bin/bash
