@@ -1,14 +1,21 @@
 ---
-- name: Pull docker image of Calculator
-  hosts: all
+- hosts: dev
+  become: True
   tasks:
-    - name: Start docker service
+    - name: Install python pip
+      yum:
+        name: python-pip
+        state: present
+    - name: Install docker
+      yum:
+        name: docker
+        state: present
+    - name: start docker
       service:
         name: docker
         state: started
-
-    - name: pull docker image
-      shell: docker pull tripathiharsh9/devops_pro
-
-    - name: running container
-      shell: docker run -it -d tripathiharsh9/devops_pro /bin/bash
+        enabled: yes
+    - name: Install docker-py python module
+      pip:
+        name: docker-py
+        state: present
